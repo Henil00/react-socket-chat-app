@@ -20,11 +20,12 @@ const Home = () => {
         url : URL,
         withCredentials : true
       })
-      dispatch(setUser(response.data.data))
       if(response.data.data.logout){
         dispatch(logout())
         navigate("/email")
+        return;
       }
+      dispatch(setUser(response.data.data))
       console.log("current  user detail",response);
     } catch (error) {
       console.log("error",error);
