@@ -27,7 +27,7 @@ async function checkpassword(req,res){
             secure : true
         }
 
-        return res.cookie('token',token,cookioption).status(200).json({
+        return res.cookies('token',token,cookioption).status(200).json({
             message : "Login Successfully",
             token : token,
             success : true
